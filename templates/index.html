@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+
+<style>
+h1 {text-align: left;}
+p {text-align: left;}
+div {text-align: left;}
+
+body {
+  background-image:url({{url_for('static', filename='User_Rating.jpg')}});
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-position: right;
+background-color: #ccbbcc;
+}
+
+</style>
+
+
+  <meta charset="UTF-8">
+  <title>Credit Score Rating System</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Retailer Score Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<label for="Recency">Recency&emsp;&nbsp;&nbsp;&nbsp;:&emsp; </label><input type="text" name="Recency" placeholder="Last Purchase (in days)" required="required" />
+<br>
+        <label for="Frequency">Frequency&emsp;:&emsp; </label><input type="text" name="Frequency" placeholder="Total No. of Orders" required="required" />
+<br>
+		<label for="Monetary">Monetary&emsp;&nbsp;:&emsp; </label><input type="text" name="Monetary" placeholder="Total Purchase Amount (In Rupees)" required="required" />
+<br>
+<br>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+<p style="color:Black";>Result:</p>
+<p style="color:Red";> {{prediction_text }} </p>
+<p style="color:Red";> {{rating_ref }} </p>
+
+<br>
+<br>
+<br>
+<br>
+<h2> <small>About the Creator of this App </h2>
+<p> <big>	This application is created by Pawan Sharma, an alumnus of 360digiTMG. 
+<br> 		He has created this application during his Internship under Innodatatics. 
+<br><br>	This application is made for a pharmaceutical client, to predict the rating of 
+<br> 		the retailer. This will help the client to identify potential customer and their 
+<br> 		credit limit based on their transactional behavior.	
+ </p>
+<br>		
+<p> <small> &copy; Innodatatics 2022. All rights reserved. </p> <i class='fas fa-phone-volume'></i>
+ </div>
+
+</body>
+</html>
