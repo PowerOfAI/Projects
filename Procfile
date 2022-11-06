@@ -1,1 +1,1 @@
-web: gunicorn app:app --preload
+web: gunicorn suicide_prediction_app:app --preload
