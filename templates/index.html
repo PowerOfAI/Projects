@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html >
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+  <style>
+  h1 {text-align: left;}
+  p {text-align: left;}
+  div {text-align: left;}
+
+  body {
+    background-image:url({{url_for('static', filename='lonely.jpg')}});
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-position: right;
+  background-color: #f7f5f7;
+  }
+  </style>
+
+    <meta charset="UTF-8">
+    <title>Suicidal Alarm System</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    
+  </head>
+
+  <body>
+    <div class="login">
+        <h1>Suicidal Tendancy Prediction</h1>
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form class="" action="prediction_on_observers_data" method="post" enctype="multipart/form-data">
+
+
+          <label for="observer">
+
+            Upload survey data (recorded by observer)  
+          </label>
+          <input type = "file" name="file">
+          <input type = "submit" value="Submit">
+        </form>
+
+     <br><br>
+
+        <form class="" action="prediction_on_self_data" method="post" enctype="multipart/form-data">
+
+
+          <label for="self">
+
+            Upload servey data (recorded by self)  
+          </label>
+            <input type = "file" name="selffile">
+            <input type = "submit" value="Submit">
+        </form>
+    </div>
+
+  </body>
+</html>
