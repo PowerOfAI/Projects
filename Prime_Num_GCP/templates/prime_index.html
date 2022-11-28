@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Prime Number Checker & Finder Application</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Prime Number Checker & Finder</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+     
+     <h3> Prime Number Checker </h3>
+    <form action="{{ url_for("prime_num_checker")}}"method="post">
+      <p> Enter an integer between 0 to 1 Million </p>
+    	<input type="number" name="aa" placeholder="enter a number between 1 and 1M" required="required" min="0" max="1000000" />
+     
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">check</button>
+    </form>
+    <br>
+    <h3 style="color:green;"> {{ result }} </h3>
+    <br>
+    <h3> Prime Number Finder </h3>
+    <form action="{{ url_for("prime_number_finder")}}"method="post">
+      <p> Enter a range of positive integers in ascending order </p>
+    	<p> Enter start number: <input type="number" name="var1" placeholder="Enter starting number" required="required" min="0" max="10000"/></p>
+      <p> Enter end number: <input type="number" name="var2" placeholder="Enter end number" required="required" min="0" max="10000"/></p>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">find</button>
+    </form>
+   <br>
+   <br>
+   <h3 style="color:green;"> {{ result2 }} </h3>
+  
+ </div>
+
+
+</body>
+</html>
