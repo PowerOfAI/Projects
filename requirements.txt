@@ -1,9 +1,0 @@
-Flask==2.2.2
-gunicorn==20.1.0
-keras==2.6.0
-matplotlib==3.3.4
-numpy==1.23.0
-pandas==1.4.3
-scikit_learn==1.1.2
-seaborn==0.11.1
-streamlit
